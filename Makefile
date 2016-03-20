@@ -21,5 +21,11 @@ check: $(EXEC)
 	bash test-swap.sh data-swap.in result-swap
 	bash test-bubble.sh data-bubble.in result-bubble
 
+check_swap: bin-swap
+	bash test-swap.sh data-swap.in result-swap
+
+check_bubble: bin-bubble
+	bash test-bubble.sh data-bubble.in result-bubble
+
 clean:
 	$(RM) $(EXEC) $(OBJS)

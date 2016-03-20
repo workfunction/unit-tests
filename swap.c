@@ -4,9 +4,8 @@
 typedef struct List_node {
     int value;
     struct List_node *next;
-} List_node;
+} List;
 
-typedef struct List_node List;
 
 List *swap(List *head, List *node_1, List *node_2)
 {
@@ -63,26 +62,11 @@ List *swap(List *head, List *node_1, List *node_2)
         return node_1;
     }
 
-    if (node_2->next == node_1) {
-        pre_node_2->next = node_1;
-        tmp_node = node_1->next;
-        node_1->next = node_2;
-        node_2->next = tmp_node;
-        return head;
-    }
-
-    if (node_1->next == node_2) {
-        pre_node_1->next = node_2;
-        tmp_node = node_2->next;
-        node_2->next = node_1;
-        node_1->next = tmp_node;
-        return head;
-    }
-
     pre_node_1->next = node_2;
-    tmp_node = node_2->next;
-    node_2->next = node_1->next;
     pre_node_2->next = node_1;
-    node_1->next = tmp_node;
+    tmp_node = node_1->next;
+    node_1->next = node_2->next;
+    node_2->next = tmp_node;
+
     return head;
 }

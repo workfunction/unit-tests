@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'b main' >> _tmp.gdb
+echo 'b main' > _tmp.gdb
 echo 'r' >> _tmp.gdb
 echo 'source scripts/create_list.gdb' >> _tmp.gdb
 echo 'source scripts/print_list.gdb' >> _tmp.gdb
@@ -49,4 +49,4 @@ echo 'y' >> _tmp.gdb
 
 gdb -q -x _tmp.gdb bin-bubble >>/dev/null
 
-rm _tmp.gdb
+
